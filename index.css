@@ -1,0 +1,278 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: white;
+  box-shadow: 0 10px 6px -6px #333;
+}
+header nav {
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+header nav .logo {
+  flex: 2 1 400px;
+  display: flex;
+  align-items: center;
+}
+header nav .logo img {
+  width: 6vw;
+  height: 6vw;
+}
+header nav .logo h1 {
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+header nav ul {
+  flex: 5 1 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+header nav ul li {
+  font-size: 1.35rem;
+  transition: all 0.5s linear;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+header nav ul li a:hover {
+  color: rgba(152, 57, 255, 0.5);
+  border-bottom: 3px solid rgba(152, 57, 255, 0.5);
+}
+header nav ul li i {
+  padding-right: 0.5rem;
+}
+header nav .rwd {
+  display: none;
+  position: relative;
+}
+header nav .rwd i {
+  transform: scale(2);
+}
+header nav .rwd i:hover {
+  cursor: pointer;
+}
+header nav .rwd ul {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  width: 120px;
+  border: 1px solid #333;
+  background: white;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  transition: all 0.75s ease-in;
+}
+header nav .rwd ul li {
+  text-align: center;
+  padding: 5px;
+}
+header nav .rwd ul li a {
+  text-decoration: none;
+  color: black;
+}
+header nav .rwd ul li a:hover {
+  color: rgba(152, 57, 255, 0.5);
+  border-bottom: 3px solid rgba(152, 57, 255, 0.5);
+}
+
+.banner {
+  width: 100%;
+  height: 70vh;
+  background: url("./images/京都古城.jpg") center center;
+  background-size: cover;
+  transition: all 0.75s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 利用 設置 position: relative 而 z-index 不是 auto 會導致內部元素開闢新層疊關係的特性，讓 .cover
+  的遮罩可以以 -1 的層級置於 p 標籤下面*/
+  position: relative;
+  z-index: 0;
+}
+.banner .cover {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 70vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.banner p {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 100;
+}
+
+.play {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+.play p {
+  font-size: 2rem;
+  padding: 1.2rem;
+}
+.play ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.play ul li {
+  flex: 0 1 200px;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.play ul li img {
+  width: 100%;
+  border-radius: 99em;
+  padding: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+.play ul li img:hover {
+  border: 0.2em solid rgba(152, 57, 255, 0.5);
+}
+
+footer {
+  background: url("./images/富士山2.jpg") no-repeat fixed;
+  background-size: cover;
+  margin-top: 2rem;
+}
+footer .sign {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.7);
+}
+footer .sign h3 {
+  font-weight: normal;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+footer .map {
+  background-color: white;
+  width: 100%;
+  padding: 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+footer .map h4 {
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+footer .map p {
+  font-size: 1.25rem;
+  padding: 1.2rem;
+  line-height: 1.8rem;
+}
+footer .map #chart_div {
+  width: 100%;
+  height: 40vh;
+}
+footer .recommend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+footer .recommend .logo {
+  flex: 1;
+  margin-right: 3rem;
+}
+footer .recommend .logo img {
+  width: 20vw;
+}
+footer .recommend p {
+  flex: 4 1 50px;
+  color: white;
+  font-size: 2.5rem;
+}
+footer .recommend .icon {
+  flex: 2 1 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .recommend .icon a {
+  flex: 0 1 40px;
+  margin: 0 1rem;
+}
+footer .recommend .icon a img {
+  width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  header nav {
+    padding: 1rem 1rem;
+    flex-wrap: nowrap;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .logo img {
+    width: 10vw;
+    height: 10vw;
+  }
+  header nav .logo h1 {
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+  header nav .rwd {
+    display: flex;
+  }
+}
+@media screen and (max-width: 420px) {
+  footer .recommend p {
+    font-size: 2rem;
+  }
+}
+/* 修改滾動條樣式 */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(152, 57, 255, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7a39e2;
+}/*# sourceMappingURL=index.css.map */
